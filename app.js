@@ -8,16 +8,27 @@ for (var i = 0; i < buttons.length; i++) {
         document.getElementById('price').scrollIntoView({ behavior: 'smooth' })
     }
 }
+const input =document.querySelectorAll('input')
+var i;
 
 document.getElementById('price-action').onclick = function () {
     if (document.getElementById('name').value === '') {
+        
         alert('Заполните поле имя!')
+        input[0].style.background = '#ffa5a5'
     } else if (document.getElementById('phone').value === '') {
         alert('Заполните поле телефон!')
+        input[1].style.background = '#ffa5a5'
     } else if (document.getElementById('car').value === '') {
         alert('Заполните поле автомобиль')
+        input[2].style.background = '#ffa5a5'
     }else {
         alert('Спасибо за заявку, мы свяжимся с вами в ближайшее время')
+        for (i = 0; i < input.length; ++i){
+        input[i].value = ''
+        input[i].style.background = '#fff'
+
+    }
     }
 }
 
